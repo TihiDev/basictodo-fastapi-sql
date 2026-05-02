@@ -1,13 +1,15 @@
-from database import Base
 from sqlalchemy import Column, Integer, String, Boolean
+from database import Base
 
-class User(Base): 
+class User(Base):
     __tablename__ = "users"
+
     id = Column(Integer, primary_key=True)
     username = Column(String, unique=True)
-    password = Column(String)
+    hashed_password = Column(String)
 
-class Task(Base): 
+
+class Task(Base):
     __tablename__ = "tasks"
 
     id = Column(Integer, primary_key=True)
